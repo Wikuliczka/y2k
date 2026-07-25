@@ -1050,6 +1050,12 @@ html {
     pointer-events: auto;
     animation: slideUp .7s ease forwards;
 }
+label{
+    display:none
+}
+input{
+    display: none;
+}
 
 @keyframes slideUp {
     from {
@@ -1479,11 +1485,77 @@ img{
 .image{
     width:100%;
 }
+    .header-menu{
+    display: none;
+}
+.button-title{
+    display:none
+}
+label{
+    display: block;
+}
+input{
+    display: block;
+}
+ 
+
+.toggle__btn{
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 2px;
+    background: #6f0062; 
+}
+.toggle__btn::after{
+    position:absolute;
+    content: "";
+    height: 2px;
+    width: 35px;
+    background: #6f0062;
+    top: 8px; 
+}
+.toggle__btn::before{
+    position:absolute;
+    content: "";
+    height: 2px;
+    width: 35px;
+    background: #6f0062;
+    top: -8px;
+}
+input[type="checkbox"]:checked + label .toggle__btn {
+    animation: line 0.5s linear alternate forwards;
+}
+@keyframes line {
+    0%{
+         transform:  rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg) ;
+    }
+}
+input[type="checkbox"]:checked ~  .header-menu  {
+    display: block;
+    position: absolute;
+    background: #ff00ee;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    left: 0;
+    top: 120px;
+    padding: 5px;
+}
+input{
+    display: none;
+}
+
 
 }
 
 /* Середні телефони */
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
 /* Маленькі телефони */
 @media (max-width: 375px) {}
